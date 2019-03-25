@@ -81,7 +81,7 @@ UserInputLogo | String | User Input | Path to an image file used as the logo whe
 UserInputMainText | String | User Input | Body text for the User Input dialog | Please enter some data
 UserInputOutputPath | String | User Input | Path to the file where User Input data will be stored | /path/to/output.plist
 UserInputTitle | String | User Input | Title text for the User Input dialog | Hello World!
-UserInputUI | Nested dictionaries | User Input | Defines the UI elements for User Input (buttons, popups and text fields). Two of each are supported | Button, PopUp, TextField
+UserInputUI | Nested dictionaries | User Input | Defines the UI elements for User Input (buttons, popups and text fields). Two of each are supported | Button, PopUps, TextFields
 
 The __UserInputUI__ key is for defining the buttons, drop-downs (or popups) and text fields of the User Input dialog. Each element is in its own nested dictionary. Some examples:
 
