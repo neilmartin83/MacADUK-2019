@@ -63,9 +63,22 @@ Examples:
 
 After you run `authchanger` you'll need to restart the Mac or kill the `loginwindow` process to force NoLoAD to reload with your changes (or to get rid of it if you're going back to the regular login window).
 
+### Example Configuration Profile
+
+[Click here](example_configuration.mobileconfig)
+
+This configuration profile sets up NoLoAD's user input and notify mechs. See the table below for details about the keys I used (note that there are more!):
+
+Key | Type | | Mech used | Description | Example Value
+BackgroundImage | String | All | Path to an image file used as the background when NoLoAD is running | /path/to/image.png
+NotifyLogStyle | String | Notify | Set this to your management tool so the Notify mech tails its  log to report on activities it's performing | jamf
+UserInputLogo | String | User Input | Path to an image file used as the logo when User Input is running | /path/to/image.png
 
 
-### [example_provisioning_script.sh](/example_provisioning_script.sh) ###
+
+### Example Provisioning Script ###
+
+[Click here](/example_provisioning_script.sh)
 
 In my example, this script is intended to be ran via a Policy that's triggered on "Enrolment Complete" - this is specific to Jamf. NoLoAD also provides the Scriptrunner mech to execute scripts at the login window, or you could use a Launch Daemon. Those are beyond the scope of my presentation.
 
