@@ -65,7 +65,7 @@ After you run `authchanger` you'll need to restart the Mac or kill the `loginwin
 
 ### Example Configuration Profile
 
-[Click here](example_configuration.mobileconfig)
+[Click here](/example_configuration.mobileconfig)
 
 This configuration profile sets up NoLoAD's user input and notify mechs. See the table below for details about the keys I used (note that there are more!):
 
@@ -101,6 +101,19 @@ Key | Type | Description | Example Value
 --- | --- | --- | ---
 placeholder | String | Shows greyed out text inside the field - used as example text | Type something like this
 title | String | Text field title text | Computer Name
+
+### Example Package Post-install Script ###
+
+[Click here](/example_pkg_postinstall.sh)
+
+In my example, I wanted to have NoLoAD install and be set up so the Notify mech would appear, along with some organisation-specific branding for the background and title images. To achieve this, I repackaged NoLoAD to include the above postinstall script.
+
+The goal is to install this tweaked package as part of the Jamf PreStage. This makes use of MDM commands to download and install the package, and as such requires:
+
+* You have a Jamf Cloud Distribution Point as your master, where the package will be served from.
+* The package is signed with an Apple Developer ID certificate.
+
+For details about PreStage packages in Jamf and information on how to obtain and use a Developer ID certificate to sign them, see https://docs.jamf.com/10.10.0/jamf-pro/administrator-guide/Computer_PreStage_Enrollments.html
 
 ### Example Provisioning Script ###
 
