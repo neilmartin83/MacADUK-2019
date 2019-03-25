@@ -35,6 +35,8 @@ __Notify__
 
 This mech provides you with a nice "status screen" showing information about what's happening, with your company's branding added. This is DEPNotify but rolled into NoLoAD so it can run at the Login Window and don't have to be logged in! It's configured and driven in mostly the same way. See https://gitlab.com/Mactroll/DEPNotify for more details (and check out my presentation video and slides!).
 
+![Notify](/images/Notify.png)
+
 __User Input__
 
 This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML formatted text file you can have your management tools read from during the provisioning process.
