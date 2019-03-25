@@ -19,6 +19,8 @@ Apple Device Enrollment Program Guide - https://www.apple.com/education/docs/DEP
 
 macOS Installation: Strange New World - https://scriptingosx.com/2018/05/macos-installation-strange-new-world/
 
+macOS Installation for Apple Administrators - https://scriptingosx.com/macos-installation-for-apple-administrators/
+
 ### NoMAD Login AD (NoLoAD) ###
 
 Grab NoLoAD here: https://gitlab.com/Mactroll/DEPNotify.
