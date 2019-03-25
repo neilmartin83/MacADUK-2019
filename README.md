@@ -82,18 +82,21 @@ UserInputUI | Nested dictionaries | User Input | Defines the UI elements for Use
 The __UserInputUI__ key is for defining the buttons, drop-downs (or popups) and text fields of the User Input dialog. Each element is in its own nested dictionary. Some examples:
 
 __Button__
+
 Key | Type | Description | Example Value
 --- | --- | --- | ---
 enabled | Boolean | Shows or hides the button | TRUE
 title | String | Button title text | OK
 
 __PopUps (drop-down menu)__
+
 Key | Type | Description | Example Value
 --- | --- | --- | ---
 items | Array of Strings | Items listed under the menu | Student, Staff, Staff Loan
 title | String | Menu title text | Computer Role
 
 __TextFields__
+
 Key | Type | Description | Example Value
 --- | --- | --- | ---
 placeholder | String | Shows greyed out text inside the field - used as example text | Type something like this
