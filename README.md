@@ -74,6 +74,11 @@ Key | Type | Mech used | Description | Example Value
 BackgroundImage | String | All | Path to an image file used as the background when NoLoAD is running | /path/to/image.png
 NotifyLogStyle | String | Notify | Set this to your management tool so the Notify mech tails its log to report on activities it's performing | jamf
 UserInputLogo | String | User Input | Path to an image file used as the logo when User Input is running | /path/to/image.png
+UserInputMainText | String | User Input | Body text for the User Input dialog | Please enter some data
+UserInputOutputPath | String | User Input | Path to the file where User Input data will be stored | /path/to/output.plist
+UserInputTitle | String | User Input | Title text for the User Input dialog | Hello World!
+UserInputUI | Nested dictionaries | User Input | Defines the UI elements for User Input (buttons, popups and text fields) | See below
+
 
 
 
