@@ -1,7 +1,7 @@
 # MacADUK-2019
 ## MDM: Improve your automated MDM enrollments
 
-Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was deeply humbled and honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment. 
+Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was deeply humbled and honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment.
 
 ### Background stuff ###
 
@@ -32,6 +32,8 @@ Join the MacAdmins Slack: https://macadmins.herokuapp.com/ - check out the __#no
 #### New mechs - Notify and User Input ####
 
 NoLoAD includes some new shiny things that make it so much more than a login window replacement that creates local accounts from AD credentials. Although that is bloody awesome in itself! It could very much be considered as an extension to Apple's Setup Assistant, giving admins much-needed capabilities during DEP based enrolment.
+
+The important thing to take away is this: NoLoAD is modular. You get to choose which parts you use. Ironically, in my environment, we join Macs to Active Directory so the login window functionality isn't needed (yet).
 
 __Notify__
 
