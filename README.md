@@ -108,12 +108,14 @@ title | String | Text field title text | Computer Name
 
 In my example, I wanted to have NoLoAD install and be set up so the Notify mech would appear, along with some organisation-specific branding for the background and title images. To achieve this, I repackaged NoLoAD to include the above postinstall script.
 
-The goal is to install this tweaked package as part of the Jamf PreStage. This makes use of MDM commands to download and install the package, and as such requires:
+The goal is to install this tweaked package as part of the Jamf PreStage. That makes sure NoLoAD launches right after the Setup Assistant (and we don't see Apple's login window!). This makes use of MDM commands to download and install the package and prevent the Setup Assistant exiting until installation is complete. As such, it requires:
 
 * You have a Jamf Cloud Distribution Point as your master, where the package will be served from.
 * The package is signed with an Apple Developer ID certificate.
 
 For details about PreStage packages in Jamf and information on how to obtain and use a Developer ID certificate to sign them, see https://docs.jamf.com/10.10.0/jamf-pro/administrator-guide/Computer_PreStage_Enrollments.html
+
+The requirement to sign your package is true for any MDM solution that uses on the `InstallApplication` command.
 
 ### Example Provisioning Script ###
 
