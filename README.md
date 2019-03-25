@@ -112,7 +112,7 @@ There are many more preferences you can manage for NoLoAD. See the full list her
 
 [Click here](/example_pkg_postinstall.sh)
 
-In my example, I wanted to have NoLoAD install and be set up so the Notify mech would appear, along with some organisation-specific branding for the background and title images. To achieve this, I repackaged NoLoAD to include the above postinstall script.
+In my example, I wanted to have NoLoAD install and be set up so the Notify mech would appear, along with some organisation-specific branding for the background and title images. To achieve this, I repackaged NoLoAD to include our branding imagery and a different postinstall script.
 
 The goal is to install this tweaked package as part of the Jamf PreStage. That makes sure NoLoAD launches right after the Setup Assistant (and we don't see Apple's login window!). This makes use of MDM commands to download and install the package and prevent the Setup Assistant exiting until installation is complete. As such, it requires:
 
