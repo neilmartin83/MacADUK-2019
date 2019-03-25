@@ -41,6 +41,8 @@ __User Input__
 
 This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML formatted text file you can have your management tools read from during the provisioning process.
 
+![User Input](/images/UserInput.png)
+
 #### authchanger ####
 
 I spoke about this thing called `authchanger` - an awesome little tool that easily and safely modifies the list of authentication mechanisms macOS uses when it boots and when a user logs in. It's included in the packaged version of NoLoAD  and we can use it to achieve a few goals:
