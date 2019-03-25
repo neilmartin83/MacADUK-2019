@@ -5,7 +5,7 @@ Imaging is a dirty word! Here are resources from my part of this presentation at
 
 ### Background stuff ###
 
-A 45 minute conference slot is by no means enough time to cover every aspect of provisioning (the key word in the title is "Improve"!). I did assume some prerequieite knowledge from the audience, but if you're just embarking on this journey, welcome! The links below will help you get started. I will update the list with links to conference videos from MacADUK as they are made available. There were some awesome sessions that'll really help you get things going.
+A 45 minute conference slot is by no means enough time to cover every aspect of provisioning (the key word in the title is "Improve"!). I did assume some prerequisite knowledge from the audience, but if you're just embarking on this journey, welcome! The links below will help you get started. I will update the list with links to conference videos from MacADUK as they are made available. There were some awesome sessions that'll really help you get things going.
 
 Lab Nauseum - Dawn Of The DEP (my talk from last year's Jamf Nation Roadshow and the precursor to this) - https://github.com/neilmartin83/Jamf-Nation-Roadshow-London-2018
 
@@ -102,7 +102,9 @@ Key | Type | Description | Example Value
 placeholder | String | Shows greyed out text inside the field - used as example text | Type something like this
 title | String | Text field title text | Computer Name
 
-### Example Package Post-install Script ###
+There are many more preferences you can manage for NoLoAD. See the full list here: https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD/wikis/Configuration/preferences
+
+### Example Package Postinstall Script ###
 
 [Click here](/example_pkg_postinstall.sh)
 
@@ -121,7 +123,7 @@ The requirement to sign your package is true for any MDM solution that uses on t
 
 [Click here](/example_provisioning_script.sh)
 
-In my example, this script is intended to be ran via a Policy that's triggered on "Enrolment Complete" - this is specific to Jamf. NoLoAD also provides the Scriptrunner mech to execute scripts at the login window, or you could use a Launch Daemon. Those are beyond the scope of my presentation.
+In my example, this script is intended to be ran via a Policy that's triggered on "Enrolment Complete" - this is specific to Jamf; NoLoAD also provides the Scriptrunner mech to execute scripts at the login window, or you could use a Launch Daemon. Those are beyond the scope of my presentation.
 
 The script also makes use of Jamf's parameter functionality: https://www.jamf.com/jamf-nation/articles/146/script-parameters
 
