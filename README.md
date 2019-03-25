@@ -1,7 +1,7 @@
 # MacADUK-2019
 ## MDM: Improve your automated MDM enrollments
 
-Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment. 
+Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was deeply humbled and honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment. 
 
 ### Background stuff ###
 
@@ -33,13 +33,13 @@ NoLoAD includes some new shiny things that make it so much more than a login win
 
 __Notify__
 
-This mech provides you with a nice "status screen" showing information about what's happening, with your company's branding added. This is DEPNotify but rolled into NoLoAD so it can run at the Login Window and don't have to be logged in! It's configured and driven in mostly the same way. See https://gitlab.com/Mactroll/DEPNotify for more details (and check out my presentation video and slides!).
+This mech provides you with a "status screen" showing information about what's happening, with your company's branding added. This is DEPNotify but rolled into NoLoAD so it can run at the Login Window and don't have to be logged in! It's configured and driven in mostly the same way. See https://gitlab.com/Mactroll/DEPNotify for more details (and check out my presentation video and slides!).
 
 ![Notify](/images/Notify.png)
 
 __User Input__
 
-This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML formatted text file you can have your management tools read from during the provisioning process.
+This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML formatted text file you can have your management tools read from during the provisioning process. It's not configured in quite the same way as DEPNotify's User Input is. See my examples below.
 
 ![User Input](/images/UserInput.png)
 
@@ -55,18 +55,21 @@ For more information, run `authchanger -help`
 
 Examples:
 
+* Show the current Authorisation DB settings: `authchanger -print`
 * Replace Apple's login window with NoLoAD: `authchanger -reset -AD`
 * Make NoLoAD start with Notify mech only `authchanger -reset -preLogin NoMADLoginAD:Notify`
-* Make NoLoAD start with User Input then progress to Notify after User Input has been received (when the user clicks the button): `/usr/local/bin/authchanger -reset -preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify`
+* Make NoLoAD start with User Input then progress to Notify after User Input has been received (when the user clicks the button): `authchanger -reset -preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify`
+* Reset everything back to use Apple's login window: `authchanger -reset`
+
+After you run `authchanger` you'll need to restart the Mac or kill the `loginwindow` process to force NoLoAD to reload with your changes (or to get rid of it if you're going back to the regular login window).
 
 
-### DEP - Provision - Example.sh ###
 
-In my example, this script is intended to be ran via a Policy that's triggered on "Enrolment Complete" (you could be fancy and trigger it via a self-destructing Launch Daemon etc to ensure it will re-run incase provisioning is interrupted and the Mac is restarted).
+### [example_provisioning_script.sh](/example_provisioning_script.sh) ###
 
-The policy should also install DEPNotify along with your branding image - in this script, the image is assumed to be in `/Library/Application Support/UEL/ux/UEL.png` (rename/replace or don't use so you get the default, as per your organisation).
+In my example, this script is intended to be ran via a Policy that's triggered on "Enrolment Complete" - this is specific to Jamf. NoLoAD also provides the Scriptrunner mech to execute scripts at the login window, or you could use a Launch Daemon. Those are beyond the scope of my presentation.
 
-The script makes use of Jamf's parameter functionality: https://www.jamf.com/jamf-nation/articles/146/script-parameters
+The script also makes use of Jamf's parameter functionality: https://www.jamf.com/jamf-nation/articles/146/script-parameters
 
 - `$4` = Jamf Pro Server URL (excluding the port number - 8443 is assumed, edit the script if you use something else)
 - `$5` = Username for the Jamf Pro Server account doing the API reads/writes (must have privileges to read and update Computers objects, as well as permission to update Users objects)
