@@ -70,6 +70,7 @@ After you run `authchanger` you'll need to restart the Mac or kill the `loginwin
 This configuration profile sets up NoLoAD's user input and notify mechs. See the table below for details about the keys I used (note that there are more!):
 
 Key | Type | Mech used | Description | Example Value
+--- | --- | --- | --- | ---
 BackgroundImage | String | All | Path to an image file used as the background when NoLoAD is running | /path/to/image.png
 NotifyLogStyle | String | Notify | Set this to your management tool so the Notify mech tails its log to report on activities it's performing | jamf
 UserInputLogo | String | User Input | Path to an image file used as the logo when User Input is running | /path/to/image.png
