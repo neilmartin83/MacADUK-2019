@@ -34,19 +34,19 @@ Join the MacAdmins Slack: https://macadmins.herokuapp.com/ - check out the __#no
 
 #### New mechs - Notify and User Input ####
 
-NoLoAD includes some new shiny things that make it so much more than a login window replacement that creates local accounts from AD credentials. Although that is bloody awesome in itself! It could very much be considered as an extension to Apple's Setup Assistant, giving admins much-needed capabilities during DEP based enrolment.
+NoLoAD includes some new shiny things that make it so much more than a login window replacement that creates local accounts from AD credentials (which is awesome in itself). It could now be considered as an extension to Apple's Setup Assistant, giving admins much-needed capabilities during DEP based enrolment.
 
-The important thing to take away is this: NoLoAD is modular. You get to choose which parts you use. Ironically, in my environment, we join Macs to Active Directory so the login window functionality isn't needed (yet).
+The important thing to take away is this: NoLoAD is modular. You get to choose which parts you use. Ironically, in my environment, we join Macs to Active Directory so we're not using the login window functionality.
 
 __Notify__
 
-This mech provides you with a "status screen" showing information about what's happening, with your company's branding added. This is DEPNotify but rolled into NoLoAD so it can run at the Login Window and don't have to be logged in! It's configured and driven in mostly the same way. See https://gitlab.com/Mactroll/DEPNotify for more details (and check out my presentation video and slides!).
+This mech provides you with a "status screen" showing information about what's happening, with your company's branding added. This is DEPNotify but rolled into NoLoAD so it can run at the Login Window, as opposed to DEPNotify, which can't. It's configured and driven in mostly the same way. See https://gitlab.com/Mactroll/DEPNotify for more details (and check out my presentation video and slides above!).
 
 ![Notify](/images/Notify.png)
 
 __User Input__
 
-This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML formatted text file you can have your management tools read from during the provisioning process. It's not configured in quite the same way as DEPNotify's User Input is. See my examples below.
+This provides a framework for creating a dialog at the login window to accept input from the user in the form of text fields and drop-down menus. The results are saved to an XML property list you can have your management tools read from during your provisioning process. It's not configured in quite the same way as DEPNotify's User Input is. See my example Configuration Profile below.
 
 ![User Input](/images/UserInput.png)
 
