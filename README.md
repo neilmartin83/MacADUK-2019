@@ -26,7 +26,7 @@ macOS Installation for Apple Administrators - https://scriptingosx.com/macos-ins
 
 ### NoMAD Login AD (NoLoAD) ###
 
-Grab NoLoAD here: https://gitlab.com/Mactroll/DEPNotify.
+Grab NoLoAD here: https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD.
 
 I focused on the 1.3.0 release (or rather, its release candidate - so there may be subtle differences from the stable one - live on the bleeding edge!).
 
