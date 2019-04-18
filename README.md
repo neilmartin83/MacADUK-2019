@@ -5,7 +5,8 @@ Imaging is a dirty word! Here are resources from my part of this presentation at
 
 [Click here for the presentation slides](/Neil_Martin_MacADUK_2019_Slides_FINAL.pdf)
 
-Click below to watch the video
+Click the image below to watch the video
+
 [![Watch the video](http://img.youtube.com/vi/FbA0Cx_LeSA/0.jpg)](http://www.youtube.com/watch?v=FbA0Cx_LeSA)
 
 ### Background stuff ###
