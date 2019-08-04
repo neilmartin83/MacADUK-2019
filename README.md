@@ -1,7 +1,7 @@
 # MacADUK-2019
 ## MDM: Improve your automated MDM enrollments
 
-Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was deeply humbled and honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment.
+Imaging is a dirty word! Here are resources from my part of this presentation at MacADUK (26th March 2019, Prospero House, London). I was deeply humbled and honoured to share the stage with the one and only Joel Rennich, director of Jamf Connect, at Jamf. My focus centred around leveraging new functionality in NoMAD Login AD to help automate MDM based provisioning workflows WITHOUT needing to log in as part of the process. We delved into a couple of NoMAD Login's specific parts, or "mechs"; __User Input__ and __Notify__, walking through one example of how to drive them during the enrolment and provisioning process. Below is an adaptation and simplification of the methods used in my university's environment.
 
 [Click here for the presentation slides](/Neil_Martin_MacADUK_2019_Slides_FINAL.pdf)
 
