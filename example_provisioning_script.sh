@@ -20,7 +20,7 @@ NOW="$(date +"*%Y-%m-%d %H:%M:%S")"
 /usr/bin/touch /private/tmp/firstrun.log
 exec 2>&1>/private/tmp/firstrun.log
 
-# Let's not go to sleep 
+# Let's not go to sleep
 log "Disabling sleep..."
 /usr/bin/caffeinate -d -i -m -s -u &
 caffeinatepid=$!
@@ -58,12 +58,12 @@ if [[ "$computerName" == "" ]] || [[ "$computerRole" == "" ]]; then
 	log "Hostname or Role not set in JSS, proceeding to User Input..."
 
 	# Quit Notify and proceed to UserInput mech
-	echo "Command: Quit" >> /var/tmp/depnotify.log
-	sleep 5
-	echo "Command: Image: "/Library/Application Support/UEL/branding/logo-prov.png"" > /var/tmp/depnotify.log
-	echo "Command: MainTitle: Please wait a moment..."  >> /var/tmp/depnotify.log
-	echo "Command: MainText: " >> /var/tmp/depnotify.log
-	echo "Status: Please wait..." >> /var/tmp/depnotify.log
+	/bin/echo "Command: Quit" >> /var/tmp/depnotify.log
+	/bin/sleep 5
+	/bin/echo "Command: Image: "/Library/Application Support/UEL/branding/logo-prov.png"" > /var/tmp/depnotify.log
+	/bin/echo "Command: MainTitle: Please wait a moment..."  >> /var/tmp/depnotify.log
+	/bin/echo "Command: MainText: " >> /var/tmp/depnotify.log
+	/bin/echo "Status: Please wait..." >> /var/tmp/depnotify.log
 
 	# Wait for the user data to be submitted...
 	while [[ ! -f /var/tmp/userinputoutput.txt ]]; do
