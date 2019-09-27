@@ -8,6 +8,7 @@
 
 # Set basic variables
 osversion=$(/usr/bin/sw_vers -productVersion)
+osbuild=$(/usr/bin/sw_vers -buildVersion)
 serial=$(/usr/sbin/ioreg -rd1 -c IOPlatformExpertDevice | /usr/bin/awk -F'"' '/IOPlatformSerialNumber/{print $4}')
 
 # Function to add date to log entries
@@ -111,9 +112,9 @@ fi
 # Change DEPNotify title and text...
 /bin/echo "Command: MainTitle: Setting things up..."  >> /var/tmp/depnotify.log
 if [[ $computerRole == "Student" ]]; then
-	/bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs. This may take a few hours. We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Computer Name: "$computerName" \n macOS Version: "$osversion""  >> /var/tmp/depnotify.log
+	/bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs. This may take a few hours. We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Computer Name: "$computerName" \n macOS Version: "$osversion" \n macOS Build: "$osbuild""  >> /var/tmp/depnotify.log
 else
-	/bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs. This may take up to 20 minutes. We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Computer Name: "$computerName" \n macOS Version: "$osversion""  >> /var/tmp/depnotify.log
+	/bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs. This may take up to 20 minutes. We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Computer Name: "$computerName" \n macOS Version: "$osversion" \n macOS Build: "$osbuild""  >> /var/tmp/depnotify.log
 fi
 
 log "Initiating Configuration..."
