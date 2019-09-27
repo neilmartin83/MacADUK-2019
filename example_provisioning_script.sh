@@ -78,6 +78,20 @@ if [[ "$computerName" == "" ]] || [[ "$computerRole" == "" ]]; then
 	computerName=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'Computer Name'")
 	computerRole=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'Computer Role'")
 
+        # Sanitise user input for computerName
+        computerName=${computerName// /-}
+        computerName=${computerName//[^a-zA-Z0-9_-]/}
+        computerName=${computerName::15}
+        computerName=`echo $computerName | tr A-Z a-z`
+        #^- above 4 lines will replace all spaces with hypens, drop all chars not a-z or a number or a hypen, then reduce remaining to max 15 chars, finally it sets to all lowercase
+
+        if [[ $computerName == "" ]]; then
+                log "Failed computerName sanitisation, defaulting to: $serial"
+                computerName=$serial
+        else
+                log "Passed computerName sanitisation, proceeding with: $computerName"
+        fi
+
 	# Update Hostname and Computer Role in JSS
 	# Create xml
 	/bin/cat << EOF > /var/tmp/name.xml
