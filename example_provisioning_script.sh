@@ -79,15 +79,18 @@ if [[ "$computerName" == "" ]] || [[ "$computerRole" == "" ]]; then
 	computerRole=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'Computer Role'")
 
         # Sanitise user input for computerName
+        # The next 3 lines will replace all spaces with hypens, drop all chars not a-z or a number or a hypen, then reduce remaining to max 15 chars
         computerName=${computerName// /-}
         computerName=${computerName//[^a-zA-Z0-9_-]/}
         computerName=${computerName::15}
-        computerName=`echo $computerName | tr A-Z a-z`
-        #^- above 4 lines will replace all spaces with hypens, drop all chars not a-z or a number or a hypen, then reduce remaining to max 15 chars, finally it sets to all lowercase
+
+        # If wishing to set everything to lowercase uncomment the next line, if wishing to set uppercase uncomment the second line.
+	#computerName=$(echo "$computerName" | tr '[:upper:]' '[:lower:]')
+        #computerName=$(echo "$computerName" | tr '[:lower:]' '[:upper:]')
 
         if [[ $computerName == "" ]]; then
                 log "Failed computerName sanitisation, defaulting to: $serial"
-                computerName=$serial
+                computerName="$serial"
         else
                 log "Passed computerName sanitisation, proceeding with: $computerName"
         fi
